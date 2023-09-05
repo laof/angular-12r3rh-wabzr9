@@ -1,0 +1,89 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  min-height: 360px;
+}
+
+.title {
+  font-size: 2.2rem;
+  padding: 1.4rem 2rem;
+  background: rgb(251, 251, 251);
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+ion-datetime {
+  min-width: 200px;
+  max-width: 100%;
+}
+
+.btn {
+  display: flex;
+  padding: 1.4rem 2rem;
+  border-top: 1px solid rgb(236, 236, 236);
+  background: rgb(251, 251, 251);
+}
+
+.datetime-box {
+  height: 216px;
+  padding: 10px 0;
+  &:first-child {
+    border-bottom: 1px solid rgb(241, 241, 241);
+  }
+}
+
+.date-line {
+  height: 0.5px;
+  background: var(--ion-background-color);
+  width: 96%;
+  margin: auto;
+}
+
+.modal-cancel {
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.container {
+  background: white;
+  min-height: 360px;
+  width: 100%;
+}
+
+ion-datetime {
+  margin: auto;
+}
+
+// --- bottom date
+
+.bottom-date {
+  background: white;
+  width: 100%;
+  ion-datetime {
+    --background: transparent;
+    --background-rgb: transparent;
+    width: 100%;
+    max-width: 100%;
+  }
+  .btn {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 1.6rem;
+  }
+
+  .date-box {
+    overflow: hidden;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

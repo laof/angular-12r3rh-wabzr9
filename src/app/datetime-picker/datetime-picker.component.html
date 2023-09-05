@@ -1,0 +1,69 @@
+<div class="container" *ngIf="position !== 'bottom'">
+  <ng-container *ngIf="!showTime">
+    <div class="title">{{ formatterTitle() }}</div>
+    <ion-datetime
+      [locale]="locale"
+      [max]="maxDate"
+      presentation="date"
+      [(ngModel)]="date"
+    ></ion-datetime>
+  </ng-container>
+  <ng-container *ngIf="showTime">
+    <div class="title">{{ 'leadsManagement.setupDateTime' | translate }}</div>
+    <div class="datetime-box">
+      <ion-datetime
+        [(ngModel)]="date"
+        [locale]="locale"
+        presentation="date"
+        [max]="maxDate"
+        [preferWheel]="true"
+      ></ion-datetime>
+    </div>
+    <div class="date-line"></div>
+    <div class="datetime-box">
+      <ion-datetime
+        class="presentation-time"
+        [(ngModel)]="date"
+        [locale]="locale"
+        presentation="time"
+      ></ion-datetime>
+    </div>
+  </ng-container>
+  <ion-buttons class="btn">
+    <ion-button color="primary" (click)="close(eventType.clear)">{{
+      'common.clear' | translate
+    }}</ion-button>
+    <ion-button
+      color="primary"
+      class="modal-cancel"
+      (click)="close(eventType.cancel)"
+    >
+      {{ 'common.cancel' | translate }}
+    </ion-button>
+    <ion-button color="primary" (click)="close(eventType.done)">{{
+      'common.done' | translate
+    }}</ion-button>
+  </ion-buttons>
+</div>
+
+<div class="bottom-date" *ngIf="position === 'bottom'">
+  <ion-buttons class="btn">
+    <ion-button color="primary" (click)="close(eventType.clear)">{{
+      'common.clear' | translate
+    }}</ion-button>
+    <ion-button color="primary" (click)="close(eventType.done)">{{
+      'common.done' | translate
+    }}</ion-button>
+  </ion-buttons>
+
+  <div class="date-box">
+    <ion-datetime
+      [locale]="locale"
+      [(ngModel)]="date"
+      [min]="minDate"
+      [max]="maxDate"
+      [presentation]="datePresentation"
+      [preferWheel]="true"
+    ></ion-datetime>
+  </div>
+</div>

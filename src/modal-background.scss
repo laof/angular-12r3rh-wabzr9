@@ -1,0 +1,17 @@
+.modal-background {
+  --backdrop-opacity: 0.32 !important; // Subsequent modals should have a backdrop/box shadow
+  --background: transparent;
+  --width: 90%;
+  --min-width: 250px;
+  --height: fit-content;
+
+  &.bottom {
+    --width: 100%;
+    --height: auto;
+
+    &::part(content) {
+      position: fixed;
+      bottom: 0;
+    }
+  }
+}
